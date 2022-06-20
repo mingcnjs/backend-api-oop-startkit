@@ -1,0 +1,11 @@
+dist
+node_modules
+lib
+yarn-lock.json
+*-debug.log
+**/.env*
+!**/.env.sample
+.firestorerc
+cache
+**/.DS_Store
+mock-email.html
