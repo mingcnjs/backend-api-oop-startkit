@@ -1,5 +1,6 @@
 dist
 node_modules
+secrets**.json
 lib
 yarn-lock.json
 *-debug.log

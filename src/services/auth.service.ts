@@ -153,7 +153,7 @@ class AuthService extends BaseFirebaseService<UserDetail> {
       return await firebaseAuth.verifyIdToken(token, true);
     } catch (err) {
       throw new ValidationException(
-        "Invalid ID Token Provided. Unable to verify identity."
+        "You are not authorized to make this request"
       );
     }
   }
