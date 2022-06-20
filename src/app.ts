@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { cors } from "./middlewares/corsMiddleware";
+import { cors } from "./middlewares/cors.middleware";
 import config from "./config";
-import errorMiddleware from "./middlewares/errorMiddleware";
+import errorMiddleware from "./middlewares/error.middleware";
 import { IRoute } from "./definitions/interfaces/IRoute";
 
 class App {

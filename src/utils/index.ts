@@ -1,3 +1,24 @@
+import { UserRecord } from "firebase-admin/lib/auth/user-record";
+import { UserStatus } from "../definitions/enums";
+import { User, UserDetail } from "../definitions/types/auth/User";
+
+export function mergeUserData({
+  userRecord,
+  userDetail,
+}: {
+  userRecord: UserRecord;
+  userDetail: UserDetail | undefined;
+}): User {
+  return {
+    uid: userRecord.uid,
+    email: userRecord.email!,
+    role: userRecord.customClaims?.role,
+    status: userDetail?.status || UserStatus.DEACTIVE,
+    firstName: userDetail?.firstName || "",
+    lastName: userDetail?.lastName || "",
+  };
+}
+
 export function hasAllValues<T>(object: T, keys: string[]) {
   if (!object) {
     return false;
